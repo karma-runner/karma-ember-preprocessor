@@ -1,0 +1,34 @@
+{
+  "name": "karma-ember-preprocessor",
+  "version": "0.0.1",
+  "description": "A Karma plugin. Compile handlebars templates for ember.js on the fly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toranb/karma-ember-preprocessor.git"
+  },
+  "keywords": [
+    "karma-plugin",
+    "preprocessor",
+    "ember",
+    "handlebars"
+  ],
+  "author": {
+    "name": "toran billups",
+    "email": "toranb@gmail.com"
+  },
+  "licenses": [
+    "MIT"
+  ],
+  "dependencies": {
+    "ember-template-compiler": "0.0.5"
+  },
+  "peerDependencies": {
+    "karma": "~0.9"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
