@@ -1,6 +1,6 @@
 {
   "name": "karma-ember-preprocessor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Karma plugin. Compile handlebars templates for ember.js on the fly.",
   "main": "index.js",
   "scripts": {

@@ -25,7 +25,8 @@ var createEmberPreprocessor = function(logger, basePath) {
 
   return function(content, file, done) {
     var processed = null;
-    //log.debug('Processing "%s".', file.originalPath);
+
+    log.debug('Processing "%s".', file.originalPath);
 
     try {
       var template = new Cli({args: [file.originalPath]}).parseCommandLineArgs();
@@ -33,7 +34,6 @@ var createEmberPreprocessor = function(logger, basePath) {
       var processed = "Ember.TEMPLATES['" + template['name'] + "'] = Ember.Handlebars.template(" + input + ");";
     } catch (e) {
       log.error('%s\n  at %s', e.message, file.originalPath);
-      throw new Error(e.message); //remove before prod run ...
     }
 
     done(processed);
