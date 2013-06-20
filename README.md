@@ -4,7 +4,7 @@
 
 For more information on Karma see the [homepage].
 
-Requires Karam 0.9.2+
+Requires Karma 0.9.2+
 
 To use this with karma, first you will need to install it with npm
 
