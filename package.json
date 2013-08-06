@@ -30,7 +30,7 @@
     "ember-template-compiler": "0.0.5"
   },
   "peerDependencies": {
-    "karma": "~0.9.3"
+    "karma": ">=0.9.3"
   },
   "devDependencies": {},
   "optionalDependencies": {}
