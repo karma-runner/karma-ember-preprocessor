@@ -4,16 +4,33 @@
 
 For more information on Karma see the [homepage].
 
-Requires Karma 0.9.3+
+Requires Karma 0.9+
 
 To use this with karma, first you will need to install it with npm
 
     npm install karma-ember-preprocessor
 
-Next install karma 0.9.3 with npm and add some configuration (sample karma.conf.js)
+Next you need to create a configuration file using karma init
+
 
     module.exports = function(karma) {
-        karma.configure({
+        karma.set({
+            basePath: 'js',
+
+            files: [
+              "vendor/jquery/jquery.min.js",
+              "vendor/handlebars/handlebars.js",
+              "vendor/ember/ember.js",
+              "app.js",
+              "tests/*.js",
+              "templates/*.handlebars"
+            ],
+
+            logLevel: karma.LOG_ERROR,
+            browsers: ['PhantomJS'],
+            singleRun: true,
+            autoWatch: false,
+
             frameworks: ["qunit"],
 
             plugins: [
@@ -25,20 +42,7 @@ Next install karma 0.9.3 with npm and add some configuration (sample karma.conf.
 
             preprocessors: {
                 "**/*.handlebars": 'ember'
-            },
-
-            files: [
-              "lib/jquery/jquery.min.js",
-              "lib/handlebars/handlebars.js",
-              "lib/ember/ember.js",
-              "app.js",
-              "tests/*.js",
-              "templates/*.handlebars"
-            ],
-
-            browsers: ['PhantomJS'],
-            singleRun: true,
-            autoWatch: false
+            }
         });
     };
 
