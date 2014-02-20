@@ -1,51 +1,25 @@
 # karma-ember-preprocessor
 
-> Preprocessor to compile handlebars templates for ember.js on the fly
-
 For more information on Karma see the [homepage].
 
 Requires Karma 0.9+
 
-To use this with karma, first you will need to install it with npm
+This forked version gives a bit more flexibility that the original:
+- Handlebar file can have multiple templates defined within it
+- Template names do not have to match file path hierarchy
 
-    npm install karma-ember-preprocessor
+E.g.
+in file: templates/app/events/event.hbs
 
-Next you need to create a configuration file using karma init
+Template name can be "events" instead of "app/events/event"
+Multiple templates can be defined within that file
 
+<script type="text/x-handlebars" id="events">
+  {{view Blocks.EventsContainerView  startEventBinding="startEvent"  endEventBinding="endEvent"}}
+</script>
+<script type="text/x-handlebars" id="somethingelse">
+  {{log this is awesome}}
+</script>
 
-    module.exports = function(karma) {
-        karma.set({
-            basePath: 'js',
-
-            files: [
-              "vendor/jquery/jquery.min.js",
-              "vendor/handlebars/handlebars.js",
-              "vendor/ember/ember.js",
-              "app.js",
-              "tests/*.js",
-              "templates/*.handlebars"
-            ],
-
-            logLevel: karma.LOG_ERROR,
-            browsers: ['PhantomJS'],
-            singleRun: true,
-            autoWatch: false,
-
-            frameworks: ["qunit"],
-
-            plugins: [
-                'karma-qunit',
-                'karma-chrome-launcher',
-                'karma-ember-preprocessor',
-                'karma-phantomjs-launcher'
-            ],
-
-            preprocessors: {
-                "**/*.handlebars": 'ember'
-            }
-        });
-    };
-
-
-[homepage]: http://karma-runner.github.com
+Currently not downloadable through npm. Will add support soon
 
