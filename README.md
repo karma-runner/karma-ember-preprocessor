@@ -18,7 +18,7 @@ Multiple templates can be defined within that file
   {{view Blocks.EventsContainerView  startEventBinding="startEvent"  endEventBinding="endEvent"}}
 </script>
 <script type="text/x-handlebars" id="somethingelse">
-  {{log this is awesome}}
+  // Something else
 </script>
 ```
 Currently not downloadable through npm. Will add support soon
