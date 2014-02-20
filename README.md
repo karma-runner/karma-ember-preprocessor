@@ -1,6 +1,6 @@
 # karma-ember-preprocessor-flexible
 
-> A Karma plugin. Compile handlebars templates for ember.js on the fly. Also gives more fleixbility by allowing templates to have any name and not have to follow a strict file path naming convention. Also allows multiple templates to be within one file.
+> A Karma plugin. Compile handlebars templates for ember.js on the fly. Also gives more flexibility by allowing templates to have any name by not forcing strict file naming convention. Also allows multiple templates to be within one file.
 
 For more information on Karma see the [homepage].
 
@@ -55,7 +55,7 @@ E.g.
 in file: templates/app/events/event.hbs
 
 Template name can be "events" instead of "app/events/event"
-Multiple templates exist within the file
+Multiple templates exist within the file as well
 ```html
 <script type="text/x-handlebars" id="events">
   {{view Blocks.EventsContainerView  startEventBinding="startEvent"  endEventBinding="endEvent"}}
