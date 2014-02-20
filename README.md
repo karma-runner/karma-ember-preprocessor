@@ -13,13 +13,13 @@ in file: templates/app/events/event.hbs
 
 Template name can be "events" instead of "app/events/event"
 Multiple templates can be defined within that file
-
+```html
 <script type="text/x-handlebars" id="events">
   {{view Blocks.EventsContainerView  startEventBinding="startEvent"  endEventBinding="endEvent"}}
 </script>
 <script type="text/x-handlebars" id="somethingelse">
   {{log this is awesome}}
 </script>
-
+```
 Currently not downloadable through npm. Will add support soon
 
