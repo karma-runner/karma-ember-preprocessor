@@ -1,4 +1,5 @@
 require('../lib/cli');
+var os = require('os');
 var path = require('path');
 
 describe("CommandLineParser Tests", function() {
@@ -14,14 +15,14 @@ describe("CommandLineParser Tests", function() {
     var tpl = path.join('file-system', 'app', 'templates', 'foo.handlebars');
     var sut = new Cli({args:[tpl]});
     result = sut.parseCommandLineArgs();
-    expect(result['content']).toEqual('{{outlet}}\n');
+    expect(result['content']).toEqual('{{outlet}}' + os.EOL);
   });
 
   it("returns template content and name when file extension is handlebars", function() {
     var tpl = path.join('file-system', 'app', 'templates', 'tables', 'index.handlebars');
     var sut = new Cli({args:[tpl]});
     result = sut.parseCommandLineArgs();
-    expect(result['content']).toEqual('{{outlet}}\n');
+    expect(result['content']).toEqual('{{outlet}}' + os.EOL);
     expect(result['name']).toEqual('tables/index');
   });
 
@@ -29,7 +30,7 @@ describe("CommandLineParser Tests", function() {
     var tpl = path.join('file-system', 'app', 'templates', 'tables', 'other.hbs');
     var sut = new Cli({args:[tpl]});
     result = sut.parseCommandLineArgs();
-    expect(result['content']).toEqual('{{outlet}}\n');
+    expect(result['content']).toEqual('{{outlet}}' + os.EOL);
     expect(result['name']).toEqual('tables/other');
   });
 
