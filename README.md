@@ -46,6 +46,11 @@ Next you need to create a configuration file using karma init
         });
     };
 
+Processed templates will made available in Ember.TEMPLATES. For example:
+
+    templates/parent.hbs // => Ember.TEMPLATES['parent']
+    templates/parent/child.hbs // => Ember.TEMPLATES['parent/child']
+    templates/parent/child/index.hbs // => Ember.TEMPLATES['parent/child/index']
 
 [homepage]: http://karma-runner.github.com
 

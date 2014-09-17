@@ -34,6 +34,14 @@ describe("CommandLineParser Tests", function() {
     expect(result['name']).toEqual('tables/other');
   });
 
+  it('returns nested template paths', function () {
+    var tpl = path.join('file-system', 'app', 'templates', 'tables', 'child', 'index.handlebars');
+    var sut = new Cli({args:[tpl]});
+    result = sut.parseCommandLineArgs();
+    expect(result['content']).toEqual('{{outlet}}' + os.EOL);
+    expect(result['name']).toEqual('tables/child/index');
+  });
+
   it("returns template content and name when a path is used that is not normalized for the current operating system",
       function() {
         var tpl = './file-system/app/templates/tables/other.hbs'
