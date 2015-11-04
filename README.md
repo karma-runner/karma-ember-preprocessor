@@ -46,6 +46,19 @@ Next you need to create a configuration file using karma init
         });
     };
 
+In case you want to use your custom Ember template compiler, you can specify path for it in the preprocessor configuration
+    
+    module.exports = function(karma) {
+        karma.set({
+
+            ...
+
+            emberPreprocessor: {
+                compilerPath: 'bower_components/ember/ember-template-compiler.js'
+            }
+        });
+    };
+
 Processed templates will made available in Ember.TEMPLATES. For example:
 
     templates/parent.hbs // => Ember.TEMPLATES['parent']
