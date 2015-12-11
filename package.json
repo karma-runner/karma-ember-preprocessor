@@ -29,9 +29,10 @@
   "dependencies": {
   },
   "peerDependencies": {
-    "karma": ">=0.9",
-    "ember-template-compiler": "1.6.1"
+    "karma": ">=0.9"
   },
   "devDependencies": {},
-  "optionalDependencies": {}
+  "optionalDependencies": {
+    "ember-template-compiler": "1.6.1"
+  }
 }
