@@ -58,6 +58,20 @@ In case you want to use your custom Ember template compiler, you can specify pat
             }
         });
     };
+    
+It is also possible to specify a transform function to be used for the template name.
+
+    module.exports = function(karma) {
+            karma.set({
+                ...
+                emberPreprocessor: {
+                    nameTransform: function(templateName) {
+                        // your transform function code
+                        return transformedName;
+                    }
+                }
+            });
+        };
 
 Processed templates will made available in Ember.TEMPLATES. For example:
 

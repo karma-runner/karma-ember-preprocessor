@@ -7,7 +7,8 @@ describe("Compiler path configuration tests", function() {
     mockLogger = {
       create: function() {
         return {
-          error: function() {
+          error: function(err) {
+            console.log(arguments);
             throw new Error(util.format.apply(util, arguments));
           },
           warn: function() {
@@ -63,4 +64,19 @@ describe("Compiler path configuration tests", function() {
     }
     expect(compilerExecuted).toBe(false);  
   });
+
+    it("process templates with custom template name", function() {
+        var compiledTemplate = '';
+        var process          = createPreprocessor(mockLogger, {
+          nameTransform: function nameTransform() {
+            return 'customTemplateName';
+        }});
+
+        process(null, {
+            originalPath: path.join('file-system', 'app', 'templates', 'foo.handlebars')
+        }, function(template) {
+            compiledTemplate = template;
+        });
+        expect(compiledTemplate).toContain("Ember.TEMPLATES['customTemplateName'] = Ember.Handlebars.template");
+    });
 });
