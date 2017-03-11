@@ -7,7 +7,7 @@ describe("Compiler path configuration tests", function() {
     mockLogger = {
       create: function() {
         return {
-          error: function(err) {
+          error: function() {
             throw new Error(util.format.apply(util, arguments));
           },
           warn: function() {
@@ -66,7 +66,7 @@ describe("Compiler path configuration tests", function() {
 
   it("process templates with custom template name", function() {
     var compiledTemplate = '';
-    var process          = createPreprocessor(mockLogger, {
+    var process = createPreprocessor(mockLogger, {
       nameTransform: function nameTransform() {
         return 'customTemplateName';
     }});
