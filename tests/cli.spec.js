@@ -51,4 +51,15 @@ describe("CommandLineParser Tests", function() {
         expect(result['name']).toEqual('tables/other');
       });
 
+  it('returns template name from transform function', function () {
+    var tpl = path.join('file-system', 'app', 'templates', 'tables', 'child', 'index.handlebars');
+    function trFn(templateName) {
+      return 'foo/' + templateName.replace(/\\/g, '/').split('/')[4];
+    }
+    var sut = new Cli({args: [tpl, trFn]});
+    result = sut.parseCommandLineArgs();
+    expect(result['content']).toEqual('{{outlet}}' + os.EOL);
+    expect(result['name']).toEqual('foo/child');
+  });
+
 });
