@@ -33,6 +33,6 @@
   },
   "devDependencies": {},
   "optionalDependencies": {
-    "ember-template-compiler": "1.6.1"
+    "ember-template-compiler": "1.8.0"
   }
 }
