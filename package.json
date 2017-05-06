@@ -29,7 +29,7 @@
   "dependencies": {
   },
   "peerDependencies": {
-    "karma": ">=0.9"
+    "karma": ">=1.7.0"
   },
   "devDependencies": {},
   "optionalDependencies": {
